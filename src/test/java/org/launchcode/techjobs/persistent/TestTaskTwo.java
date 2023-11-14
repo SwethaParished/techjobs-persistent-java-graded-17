@@ -322,9 +322,9 @@ public class TestTaskTwo extends AbstractTest {
      * Verifies that SkillRepository has @Repository
      * */
     @Test
-    public void testSkillRepositoryHasRepositoryAnnotation () throws ClassNotFoundException {
+   public void testSkillRepositoryHasRepositoryAnnotation () throws ClassNotFoundException {
         Class skillRepositoryClass = getClassByName("models.data.SkillRepository");
-        Annotation annotation = skillRepositoryClass.getAnnotation(Repository.class);
+       Annotation annotation = skillRepositoryClass.getAnnotation(Repository.class);
     }
 
     // --- END DATA LAYER TESTS --- //

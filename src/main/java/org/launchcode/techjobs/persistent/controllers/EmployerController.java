@@ -16,12 +16,13 @@ import java.util.Optional;
 public class EmployerController {
     @Autowired
     private EmployerRepository employerRepository;
-
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("employer",employerRepository.findAll());
+        model.addAttribute("title", "Tech Jobs");
+        model.addAttribute("employers",employerRepository.findAll());
         return "employers/index";
     }
+
     @GetMapping("add")
     public String displayAddEmployerForm(Model model) {
         model.addAttribute(new Employer());
@@ -36,7 +37,7 @@ public class EmployerController {
             return "employers/add";
         }
         employerRepository.save(newEmployer);
-        return "redirect:";
+        return "redirect:/employers/";
     }
 
     @GetMapping("view/{employerId}")
